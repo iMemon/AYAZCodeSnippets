@@ -15,10 +15,6 @@ Xcode saves its snippets code at location:
 ```bash
 ~/Library/Developer/Xcode/UserData/CodeSnippets/
 ```
-or
-```bash
-/Users/username/Library/Developer/Xcode/UserData/CodeSnippets
-```
 
 Therefore, we will make a git repo which also locate at that location. Do that, we can make snippets to be updated just by pulling/pushing git repo.
 
@@ -35,11 +31,37 @@ git remote set-url origin https://username@github.com/username/iCodeSnippets.git
 
 ##### Method 2
 ``` 
-cd ~/Library/Developer/Xcode/UserData/
-cp CodeSnippets CodeSnippetsBackup				// Backup CodeSnippets folder if it is existing
-rm -r CodeSnippets 								// Remove CodeSnippets folder
-git clone https://username@github.com/username/iCodeSnippets.git CodeSnippets
-cp CodeSnippetsBackup/* CodeSnippets/ 			// Optional, if you want to merge the exisiting snippets and snippets from repo
+// Goto Xcode CodeSnippets path
+$ cd ~/Library/Developer/Xcode/UserData/
+
+// Check if the CodeSnippets folder exists or not
+$ ls CodeSnippets
+
+// ******** Do this if the CodeSnippets folder doesn't exists ******** //
+
+// Pull the code snippets from GitHub
+$ git clone https://iMemon@github.com/iMemon/AYAZCodeSnippets.git CodeSnippets
+
+// ******** ******** ******** ******** ******** ******** ******** //
+
+// ******** Do this if the CodeSnippets folder exists ******** //
+
+// Backup CodeSnippets folder
+$ cp CodeSnippets CodeSnippetsBackup
+
+// Remove CodeSnippets folder
+$ rm -r CodeSnippets
+
+// Pull the code snippets from GitHub
+$ git clone https://iMemon@github.com/iMemon/AYAZCodeSnippets.git CodeSnippets
+
+// If you want to merge the exisiting snippets and snippets from repo
+cp CodeSnippetsBackup/* CodeSnippets/
+
+// Delete CodeSnippetsBackup folder
+$ rm -r CodeSnippetsBackup
+
+// ******** ******** ******** ******** ******** ******** ******** //
 
 // Next, PUSH or PULL, it is up to you. Recommend that PUSH first if your repo is merged!
 ```
