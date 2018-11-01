@@ -18,34 +18,26 @@ Xcode saves its snippets code at location:
 
 Therefore, we will make a git repo which also locate at that location. Do that, we can make snippets to be updated just by pulling/pushing git repo.
 
-So, there are two ways to make your snippet go visible on git repository.
+So, here is the step by step process to make your snippet go visible on git repository.
 
-##### Method 1
 ```
-cd ~/Library/Developer/Xcode/UserData/CodeSnippets/
-git init
-git remote set-url origin https://username@github.com/username/iCodeSnippets.git
-
-// Next, pull or push, it is up to you. Recommend that PULL first if your repo is not up-to-date.
-```
-
-##### Method 2
-``` 
 // Goto Xcode CodeSnippets path
 $ cd ~/Library/Developer/Xcode/UserData/
 
 // Check if the CodeSnippets folder exists or not
 $ ls CodeSnippets
+```
 
-// ******** Do this if the CodeSnippets folder doesn't exists ******** //
-
+##### Do this if the CodeSnippets folder doesn't exists
+```
 // Pull the code snippets from GitHub
 $ git clone https://iMemon@github.com/iMemon/AYAZCodeSnippets.git CodeSnippets
 
-// ******** ******** ******** ******** ******** ******** ******** //
+// Next, pull or push, it is up to you. Recommend that PULL first if your repo is not up-to-date.
+```
 
-// ******** Do this if the CodeSnippets folder exists ******** //
-
+##### Do this if the CodeSnippets folder already exists
+``` 
 // Backup CodeSnippets folder
 $ cp CodeSnippets CodeSnippetsBackup
 
@@ -60,8 +52,6 @@ cp CodeSnippetsBackup/* CodeSnippets/
 
 // Delete CodeSnippetsBackup folder
 $ rm -r CodeSnippetsBackup
-
-// ******** ******** ******** ******** ******** ******** ******** //
 
 // Next, PUSH or PULL, it is up to you. Recommend that PUSH first if your repo is merged!
 ```
