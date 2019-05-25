@@ -75,9 +75,7 @@ May need to change ownership of the Snippets folder and its subfolders
 chmod -R 777 CodeSnippets/
 ```
 
-
 > **Warning: Besure that your code is WILLING to go PUBLIC if you use public git repository!!!**
-
 
 > Next task: Synchronize Bookmark Documentation.
 > Bookmark is saved in ```~/Library/Preferences/com.apple.dt.Xcode.plist``` with key ```Xcode.Organizer.Documentation.Bookmarks```. Just parse this key and get all items. 
